@@ -1,13 +1,22 @@
 <% @attractions.each do |attraction| %>
     <% if @user.admin == true %>
-    <%= link_to "Show #{attraction.name}", attraction_path(attraction) %>
+    <%= link_to "Show #{attraction.name}", attraction_path(attraction) %> <br>
     <% else  %>
-    <%= link_to "Go on #{attraction.name}", attraction_path(attraction) %>
+    <tr>
+  
+    <th><strong>Name: </strong> <%= attraction.name %></th>
+    <th><strong>Tickets: </strong> <%= attraction.tickets %></th>
+    <th><strong>Nausea-Rating: </strong><%= attraction.nausea_rating %></th>
+    <th><strong>Happiness-Rating: </strong><%= attraction.happiness_rating  %></th>
+    <th><strong>Minimum Height: </strong> <%= attraction.min_height %></th>
+       <%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></tr> <hr> <br>
+
+    
     <% end %>
 <% end %>
 
 <% if @user.admin == true %>
-    <%= link_to "New Attraction", new_attraction_path %>
+    <%= link_to "New Attraction", new_attraction_path %> <br>
 <% end %>
 
 

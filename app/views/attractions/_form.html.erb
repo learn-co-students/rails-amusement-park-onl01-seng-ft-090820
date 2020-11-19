@@ -1,18 +1,18 @@
  <%= form_for @attraction do |f| %>
     <p><%= f.label :name %></p> 
-    <%= f.text_field :name %> <br> 
+    <%= f.text_field :name %> <br> <br>
 
    <p> <%= f.label :tickets %></p>
-    <%= f.text_field :tickets %> <br>
+    <%= f.text_field :tickets %> <br> <br>
 
    <p> <%= f.label :nausea_rating %></p> 
-    <%= f.text_field :nausea_rating %> <br>
+    <%= f.text_field :nausea_rating %><br> <br>
 
    <p> <%= f.label :happiness_rating %></p> 
-    <%= f.text_field :happiness_rating %> <br> 
+    <%= f.text_field :happiness_rating %> <br> <br>
 
    <p> <%= f.label :min_height %></p> 
-    <%= f.text_field :min_height %> <br>
+    <%= f.text_field :min_height %> <br> <br>
 
    <%= f.submit @attraction.persisted? ? "Update Attraction" : "Create Attraction" %>
 
