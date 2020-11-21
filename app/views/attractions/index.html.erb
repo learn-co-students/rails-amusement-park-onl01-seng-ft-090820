@@ -1,0 +1,14 @@
+<h1>Attractions:</h1>
+<% if current_user.admin? %>
+    Admin Functions: <br>
+    <%= link_to 'New Attraction', new_attraction_path %>
+    <hr>
+    <% @attractions.each do |attraction| %>
+        <%= link_to "Show #{attraction.name}", attraction %>
+        <br>
+    <% end %>
+    <% else %>
+        <% @attractions.each do |attraction| %>
+            <%= link_to "Go on #{attraction.name}", attraction %> <br>
+        <% end %>
+<% end %>

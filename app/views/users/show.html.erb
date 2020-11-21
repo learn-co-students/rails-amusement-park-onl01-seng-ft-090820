@@ -1,0 +1,29 @@
+<h1>Welcome <%= current_user.name %>!</h1>
+Current Mood: <%= current_user.mood %>
+<br>
+<% if !!current_user.admin %>
+    Status: ADMIN
+    <br>
+<% end %>
+<br>
+<%= link_to 'See attractions', attractions_path %>
+<hr>
+
+<% if flash[:message] %>
+    <%= flash[:message] %>
+    <hr>
+<% end %>
+<h4>User Stats</h4>
+Height: <%= current_user.height %> inches
+<br>
+Current Tickets: <%= current_user.tickets %>
+<br>
+Happiness: <%= current_user.happiness %>
+<br>
+Nausea: <%= current_user.nausea %>
+<br>
+<br>
+Rides Taken:
+<% current_user.rides.each do |ride| %>
+    <li><%= ride.attraction.name %></li>
+<% end %>
