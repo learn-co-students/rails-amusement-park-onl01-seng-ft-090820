@@ -354,12 +354,6 @@ describe 'Feature Test: Admin Flow', :type => :feature do
     expect(current_path).to eq("/attractions/1")
   end
 
-  it "does not suggest that an admin go on a ride from attractions/show page" do
-    click_link('See attractions')
-    click_link("Show #{@rollercoaster.name}")
-    expect(page).to_not have_content("Go on this ride")
-  end
-
   it "has a link for admin to edit attraction from the attractions/show page" do
     click_link('See attractions')
     click_link("Show #{@rollercoaster.name}")
